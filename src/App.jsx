@@ -1,31 +1,35 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-export default function App() {
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="min-h-screen bg-black text-white p-8">
-      <header className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">Burna Boy Token</h1>
-        <ConnectButton />
-      </header>
-
-      <main className="space-y-6">
-        <div className="bg-gray-900 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold">Token Stats</h2>
-          <p>$BURNA / WETH Price: $0.01272</p>
-          <p>Market Cap: $127.07M</p>
-          <p>Holders: 6</p>
-        </div>
-
-        <div className="bg-gray-900 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold mb-4">Swap $BURNA</h2>
-          <iframe
-            src="https://app.uniswap.org/#/swap?outputCurrency=0x00B...6AAE"
-            height="660px"
-            width="100%"
-            style={{ border: '0', marginTop: '1rem', borderRadius: '10px' }}
-          />
-        </div>
-      </main>
-    </div>
-  );
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
+
+export default App

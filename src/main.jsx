@@ -10,18 +10,8 @@ import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 
 const { chains, publicClient } = configureChains([mainnet], [publicProvider()]);
-
-const { connectors } = getDefaultWallets({
-  appName: 'Burna DApp',
-  projectId: 'burna-boy-dapp',
-  chains,
-});
-
-const config = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-});
+const { connectors } = getDefaultWallets({ appName: 'Burna DApp', chains });
+const config = createConfig({ autoConnect: true, connectors, publicClient });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
